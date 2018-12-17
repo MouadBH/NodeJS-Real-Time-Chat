@@ -1,0 +1,21 @@
+{
+  "name": "rtchat",
+  "version": "1.0.0",
+  "description": "A Real Time Chat Application Using NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Chat",
+    "nodeJS",
+    "realtime"
+  ],
+  "author": "MouadBH",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "moment": "^2.23.0",
+    "socket.io": "^2.2.0"
+  }
+}
