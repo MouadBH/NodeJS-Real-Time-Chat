@@ -13,7 +13,7 @@ app.use(express.static('public'));
 sio.on("connection", function (socket) {
   console.log("User Connected ID : " + socket.id);
 
-  socket.username = "Anonymous";
+//  socket.username = "Anonymous";
 
   socket.on("chengename", function (data) {
     socket.username = data.username;
@@ -24,6 +24,12 @@ sio.on("connection", function (socket) {
       msg:data.msg,
       time:moment().calendar(data.time),
       user:socket.username
+    });
+  });
+
+  socket.on('ishere',function (data) {
+    socket.broadcast.emit('ishere', {
+      ppl:data.username
     });
   });
 
