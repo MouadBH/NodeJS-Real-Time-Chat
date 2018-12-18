@@ -7,16 +7,17 @@ server = app.listen(port, function () {
 const socket = require('socket.io');
 var sio = socket(server);
 var moment = require('moment');
-
+var userNbr = 0;
 app.use(express.static('public'));
 
 sio.on("connection", function (socket) {
   console.log("User Connected ID : " + socket.id);
 
-//  socket.username = "Anonymous";
+  socket.username = "Anonymous";
 
   socket.on("chengename", function (data) {
     socket.username = data.username;
+    userNbr++;
   });
 
   socket.on('new_msg', function (data) {
@@ -38,4 +39,17 @@ sio.on("connection", function (socket) {
       username:socket.username
     });
   });
+
+  socket.on('styping', function (data) {
+    socket.broadcast.emit("styping",{
+      username:socket.username
+    });
+  });
+
+   socket.on("disconnect", function () {
+     socket.broadcast.emit('gonne', {
+       username:socket.username
+     });
+     userNbr--;
+   });
 });
