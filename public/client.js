@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var socket = io.connect('http://localhost:5000');
+  var socket = io.connect('https://rtchat07.herokuapp.com');
 
   $("#app").hide();
   $("#app2").hide();
