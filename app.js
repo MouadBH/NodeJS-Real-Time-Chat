@@ -8,6 +8,7 @@ const socket = require('socket.io');
 var sio = socket(server);
 var moment = require('moment');
 var userNbr = 0;
+var users = [];
 app.use(express.static('public'));
 
 sio.on("connection", function (socket) {
