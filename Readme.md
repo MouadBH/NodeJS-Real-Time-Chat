@@ -3,7 +3,6 @@ A simple chat application using Express.js and socket.io
 ## How to use
 ```
 $ git clone https://github.com/MouadBH/NodeJS-Real-Time-Chat.git
-$ npm install
 $ npm start
 $ node app.js
 ```
@@ -16,4 +15,4 @@ For a live demo go to: `https://rtchat07.herokuapp.com/`
 on website load.
 - Users can type chat messages to the chat room.
 - A sound notification is sent to all users when a user send a message.
-###Enjoy!
+### Enjoy!
